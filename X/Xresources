@@ -1,0 +1,27 @@
+! file: Xdefaults
+
+!emacs*font: Monospace-10
+emacs*FontBackend: xft
+Emacs.font: Bitstream Vera Sans Mono-10
+emacs*background: black
+emacs*foreground: darkgrey
+
+
+! URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
+URxvt*font: xft:Source Code Pro:pixelsize=16:antialias=true
+URxvt.scrollBar: off
+URxvt.fading: 10
+URxvt*letterSpace: -1
+! URxvt*cursorColor: lightblue
+URxvt*cursorColor: cornflowerblue
+
+! taking the advice at https://wiki.archlinux.org/index.php/Font_Configuration
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+! Xft.dpi: 101
+
+! end

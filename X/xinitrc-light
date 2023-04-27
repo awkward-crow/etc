@@ -1,0 +1,48 @@
+# xinitrc-light
+
+xrdb load $HOME/etc/X/Xresources
+xrdb -merge $HOME/etc/X/colors/solar-light
+
+xsetroot -solid beige
+
+setxkbmap -option terminate:ctrl_alt_bksp
+
+# turn the bloody beep off
+xset b off
+
+setxkbmap dvorak -variant us
+xmodmap $HOME/etc/X/spark.xmm
+
+while true
+do
+    xsetroot -name "`date +\"%A %e %B  %-H.%M\"`"
+    sleep 30s
+done &
+
+# sh ~/.fehbg &
+# $HOME/a/images/a.sh 300s $HOME/a/images/hokusai &
+
+wmname LG3D
+
+# for Glenda
+
+# fontsrv &
+# plumber 
+
+xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
+
+
+## to run my fork of dwm while it's in development
+
+session=${1:-m}
+
+case $session in
+    m   ) exec $HOME/a/dwm/bin/dwm;;
+    dwm ) exec $NEST/dwm/bin/dwm;;
+esac
+
+## usage: startx ~/.xinitrc m 
+## note that the `~/` is necessary!
+
+# end
+
