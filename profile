@@ -9,23 +9,11 @@ fi
 
 alias x='ssh-agent startx'
 # alias x='startx'
-export NEST=$HOME/nest
-export DOM=$HOME
 
-export DWM_LOG_FILE=$HOME/.dwm.log
+export DWM_HOME=$HOME/a/dwm
 
-export OSLO_LOG_FILE=$HOME/.oslo.log
+export DWM_LOG_FILE=$DWM_HOME/logs/dwm.log
 
-# export VISUAL=vim
-# export EDITOR=vim
-
-# export QHOME=$HOME/a/kx/q
-
-# for glenda
-# export BROWER=chromium
-
-# export LUA_INIT=@$HOME/a/lua/init.lua
-# export LUA_INIT=@$HOME/a/lua/init-5.3.lua
 
 export R_LIBS=$HOME/a/R/libs
 
