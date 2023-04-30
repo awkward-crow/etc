@@ -24,25 +24,8 @@ $HOME/a/images/a.sh 300s $HOME/a/images/misc &
 
 wmname LG3D
 
-## for Glenda
+xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
 
-#fontsrv &
-#plumber 
-
-# xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
-
-
-## to run my fork of dwm while it's in development
-
-session=${1:-m}
-
-case $session in
-    m   ) exec $HOME/a/dwm/bin/dwm;;
-    dwm ) exec $NEST/dwm/bin/dwm;;
-esac
-
-## usage: startx ~/.xinitrc m 
-## note that the `~/` is necessary!
 
 ### end
 
