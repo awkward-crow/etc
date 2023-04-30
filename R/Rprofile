@@ -1,0 +1,14 @@
+# file: .Rprofile
+
+summ <- summary
+
+# dump function (or other) to a file,
+# file name is name of function + extension
+.d <- function(f, extension = ".r") {
+    n <- deparse(substitute(f))
+    dump(n, paste(n, extension, sep = ""))
+    return(n)
+}
+
+
+### end
