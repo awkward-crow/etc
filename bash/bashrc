@@ -14,8 +14,10 @@ source $HOME/etc/git-prompt/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 case "$TERM" in
-xterm*|rxvt*)
-    #         PS1=' \[\033[01;30m\]\w\[\033[01;35m\]$(hg_ps1)\[\033[01;36m\]$(__git_ps1 " %s")\[\033[00m\] '
+    xterm*)
+        PS1=' $ '
+        ;;
+    rxvt*)
         PS1=' \[\033[01;30m\]\w\[\033[01;35m\]\[\033[00;36m\]$(__git_ps1 " %s")\[\033[00m\] '
         ;;
     *)
