@@ -12,49 +12,49 @@ function uh () {
 function ff () {
     if [ -n "${1}" ] && [ -n "${2}" ]; then
         find $2 -name $1
-    else if [ -n "${1}" ]; then
-        find . -name $1
-    else
-        echo "Too few args"
-    fi      
-    fi      
-
+    else 
+        if [ -n "${1}" ]; then
+            find . -name $1
+        else
+            echo "Too few args"
+        fi      
+    fi
 }
 
 function i () {
-        if [ $# -eq 1 ]; then
-                nvim -R $1
-        else
-                echo "What? No file?"
-        fi
+    if [ $# -eq 1 ]; then
+        nvim -R $1
+    else
+        echo "What? No file?"
+    fi
 }
 
 function e () {
-        if [ $# -eq 1 ]; then
-                nvim $1
-        fi
+    if [ $# -eq 1 ]; then
+        nvim $1
+    fi
 }
 
 
 function u () {
-        if [ $# -eq 1 ]; then
-                ft=$(file -b --mime-type $1)
-                if [ $ft = 'application/pdf' ]; then
-                        zathura $1 &
-                else
-                        less -X $1;
-                fi
+    if [ $# -eq 1 ]; then
+        ft=$(file -b --mime-type $1)
+        if [ $ft = 'application/pdf' ]; then
+            zathura $1 &
         else
-                eval $* | less -X;
+            less -X $1;
         fi
+    else
+        eval $* | less -X;
+    fi
 }
 
 function o () {
-        eval $* | less -X
+    eval $* | less -X
 }
 
 function oo () {
-        eval $* 2>&1 | less -X
+    eval $* 2>&1 | less -X
 }
 
 function ooo() {
@@ -62,25 +62,29 @@ function ooo() {
 }
 
 function t () {
-        if [ -n "${1}" ] && [ -n "${2}" ]; then
-                ls -$2 $1
-        else if [ -n "${1}" ]; then
-                ls -CF $1
+    if [ -n "${1}" ] && [ -n "${2}" ]; then
+        ls -$2 $1
+    else 
+        if [ -n "${1}" ]; then
+            ls -CF $1
         else
-                ls -CF
-        fi fi
+            ls -CF
+        fi 
+    fi
 }
 
 function h () {
-        if [ -n "${1}" ] && [ -n "${2}" ]; then
-                cd $1
-                ls -$2
-        else if [ -n "${1}" ]; then
-                cd $1
-                ls -CF 
+    if [ -n "${1}" ] && [ -n "${2}" ]; then
+        cd $1
+        ls -$2
+    else 
+        if [ -n "${1}" ]; then
+            cd $1
+            ls -CF 
         else
-                cd ~
-        fi fi
+            cd ~
+        fi 
+    fi
 }
 
 function n () {
@@ -94,21 +98,23 @@ function n () {
 }
 
 function hh () {
-        if [ -n "${1}" ] && [ -n "${2}" ]; then
-                pushd $1
-                ls -$2
-        else if [ -n "${1}" ]; then
-                pushd $1
-                ls -CF 
+    if [ -n "${1}" ] && [ -n "${2}" ]; then
+        pushd $1
+        ls -$2
+    else 
+        if [ -n "${1}" ]; then
+            pushd $1
+            ls -CF 
         else
-                popd 
-                ls -CF 
-        fi fi
+            popd 
+            ls -CF 
+        fi 
+    fi
 }
 
 
 function j () {
-        urxvt &
+    urxvt &
 }
 
 
