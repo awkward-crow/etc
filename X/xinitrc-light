@@ -15,16 +15,17 @@ xmodmap $HOME/etc/X/spark.xmm
 
 while true
 do
-    xsetroot -name "`date +\"%A %e %B  %-H.%M\"`"
+    # xsetroot -name "`date +\"%A %e %B  %-H.%M\"`"
+    xsetroot -name "`acpi -b | awk '{ print $3 \" \" $4 }' | sed s/,//g`  `date +%-H.%M`"
     sleep 30s
 done &
 
-# sh ~/.fehbg &
-# $HOME/a/images/a.sh 300s $HOME/a/images/hokusai &
+sh ~/.fehbg &
+$HOME/a/images/light.sh 300s $HOME/a/images/hokusai &
 
 wmname LG3D
 
-# xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
+xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
 
 exec $HOME/a/dwm/bin/dwm
 

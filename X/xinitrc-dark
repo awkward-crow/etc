@@ -24,7 +24,7 @@ $HOME/a/images/a.sh 300s $HOME/a/images/misc &
 
 wmname LG3D
 
-# xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
+xautolock -time 5 -locker xsecurelock -nowlocker xsecurelock -corners 0+00 -cornerdelay 3 &
 
 exec $HOME/a/dwm/bin/dwm
 
