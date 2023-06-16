@@ -23,7 +23,12 @@ function ff () {
 
 function i () {
     if [ $# -eq 1 ]; then
-        nvim -R $1
+        ft=$(file -b --mime-type $1)
+        if [ $ft = 'application/pdf' ]; then
+            zathura $1 &
+        else
+            nvim -R $1
+        fi
     else
         echo "What? No file?"
     fi
