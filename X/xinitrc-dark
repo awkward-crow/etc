@@ -10,7 +10,7 @@ setxkbmap -option terminate:ctrl_alt_bksp
 ## turn the bloody beep off
 xset b off
 
-setxkbmap dvorak -variant us
+setxkbmap -layout us -variant dvorak
 xmodmap $HOME/etc/X/spark.xmm
 
 while true
